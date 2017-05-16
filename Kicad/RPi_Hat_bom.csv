@@ -1,0 +1,37 @@
+Component,Description,Part,References,Value,Footprint,Quantity Per PCB,Datasheet,Mouser Part No.,Digikey Part Number,Manufacturer Part Number
+1,"Connector, single row, 01x03, pin header",CONN_01X03,1Wire-1,CONN_01X03,0436500317,1,,,,
+2,,FEATHER_MO_LORA-RESCUE-pihat_template,Adafruit_Feather-1,FEATHER_MO_LORA,FEATHER_MO_LORA,1,,,,
+3,,FEATHER_WING,Adafruit_Feather_Wing-1,FEATHER_WING,FEATHER_WING,1,,,,
+4,single battery cell,Battery_Cell,BT1,Battery_Cell,BC501SM,1,,,,
+5,Unpolarized capacitor,C_Small,C1 C2 C3 C6 C7 C8 C12 C13 C14 C15,0.1u,C_0805_HandSoldering,10,,810-C1005X5R1H104K,,
+6,Unpolarized capacitor,C_Small,C4 C5 C9 C10,10pF,C_0805_HandSoldering,4,,,,
+7,Unpolarized capacitor,C,C11,1uf,C_0805_HandSoldering,1,,810-C1005X5R1H104K,,
+8,"Connector, single row, 01x02, pin header",CONN_01X02,CAN1 CAN2,CONN_01X02,0436500219,2,,,,
+9,LED generic,LED,D1 D2,LED,LED_0805,2,,,,
+10,"Connector, single row, 01x04, pin header",CONN_01X04,I2C-1,CONN_01X04,0436500417,1,,,,
+11,"Connector, single row, 01x02",CAN_NODE_JUNCTION,J4 J5,CAN_NODE_JUNCTION,CAN_NODE_JONCTION,2,,,,
+12,,RPi_GPIO,J1,RPi_GPIO,Pin_Header_Straight_2x20,1,,,,
+13,Resistor,R,R4 R5,1k,R_0805_HandSoldering,2,,,,
+14,Resistor,R,R1,200k,R_0805_HandSoldering,1,,,,
+15,Resistor,R,R2 R3,4.7k,R_0805_HandSoldering,2,,,,
+16,,DS2482-100,U7,DS2482-100,SOIC-8_3.9x4.9mm_Pitch1.27mm,1,,,,
+17,Extremely Accurate I2C-Integrated RTC/TCXO/Crystal SOIC-16,DS3231,U1,DS3231,SOIC-16W_7.5x10.3mm_Pitch1.27mm,1,http://datasheets.maximintegrated.com/en/ds/DS3231.pdf,,,
+18,,DS9503,U8,DS9503,TSOC-6,1,,,DS9503P+T&RCT-ND,DS9503P+T&R
+19,,MCP25625,U4 U5,MCP25625,SSOP-28_5.3x10.2mm_Pitch0.65mm,2,,,,
+20,,PCA9306-RESCUE-RPi_Hat,U6,PCA9306,SOIC-8_3.9x4.9mm_Pitch1.27mm,1,,,568-4215-1-ND,"PCA9306D,118"
+21,"Two pin crystal, small symbol",Crystal_Small,Y1 Y2,16MHz,SMD-2520,2,,,,
+
+
+
+
+
+Component Groups:,21
+Component Count:,40
+Fitted Components:,40
+Number of PCBs:,1
+Total components:,40
+Schematic Version:,
+Schematic Date:,2017-02-08
+BoM Date:,lun 08 mai 2017 16:11:01 EDT
+Schematic Source:,/home/caribou/git_rep/board_RPi_Hat_Feather/Kicad/RPi_Hat.sch
+KiCad Version:,Eeschema no-vcs-found-01f5a12~58~ubuntu16.04.1

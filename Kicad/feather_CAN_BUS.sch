@@ -1,0 +1,283 @@
+EESchema Schematic File Version 2
+LIBS:RPi_Hat-rescue
+LIBS:power
+LIBS:device
+LIBS:transistors
+LIBS:conn
+LIBS:linear
+LIBS:regul
+LIBS:74xx
+LIBS:cmos4000
+LIBS:adc-dac
+LIBS:memory
+LIBS:xilinx
+LIBS:microcontrollers
+LIBS:dsp
+LIBS:microchip
+LIBS:analog_switches
+LIBS:motorola
+LIBS:texas
+LIBS:intel
+LIBS:audio
+LIBS:interface
+LIBS:digital-audio
+LIBS:philips
+LIBS:display
+LIBS:cypress
+LIBS:siliconi
+LIBS:opto
+LIBS:atmel
+LIBS:contrib
+LIBS:valves
+LIBS:jfng
+LIBS:RPi_Hat-cache
+EELAYER 26 0
+EELAYER END
+$Descr USLetter 11000 8500
+encoding utf-8
+Sheet 7 7
+Title ""
+Date "2017-02-08"
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L MCP25625 U5
+U 1 1 589B70F6
+P 5125 3900
+F 0 "U5" H 5525 5175 60  0000 C CNN
+F 1 "MCP25625" H 5650 2775 60  0000 C CNN
+F 2 "Housings_SSOP:SSOP-28_5.3x10.2mm_Pitch0.65mm" H 550 700 60  0001 C CNN
+F 3 "" H 550 700 60  0000 C CNN
+	1    5125 3900
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR045
+U 1 1 589B70FD
+P 4975 5325
+F 0 "#PWR045" H 5025 5375 50  0001 C CNN
+F 1 "GND" H 4980 5152 50  0000 C CNN
+F 2 "" H -475 150 50  0001 C CNN
+F 3 "" H -475 150 50  0001 C CNN
+	1    4975 5325
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR046
+U 1 1 589B7103
+P 5275 5325
+F 0 "#PWR046" H 5325 5375 50  0001 C CNN
+F 1 "GND" H 5280 5152 50  0000 C CNN
+F 2 "" H -475 150 50  0001 C CNN
+F 3 "" H -475 150 50  0001 C CNN
+	1    5275 5325
+	1    0    0    -1  
+$EndComp
+NoConn ~ 4475 4600
+NoConn ~ 4475 4500
+NoConn ~ 4475 4400
+NoConn ~ 4475 4300
+NoConn ~ 4475 4200
+NoConn ~ 4475 4100
+NoConn ~ 4475 4000
+$Comp
+L C_Small C6
+U 1 1 589B7110
+P 4725 2075
+F 0 "C6" V 4496 2075 50  0000 C CNN
+F 1 "0.1u" V 4587 2075 50  0000 C CNN
+F 2 "Capacitors_SMD:C_0805_HandSoldering" H -525 0   50  0001 C CNN
+F 3 "" H -525 0   50  0001 C CNN
+	1    4725 2075
+	0    1    1    0   
+$EndComp
+$Comp
+L C_Small C7
+U 1 1 589B7117
+P 4725 2425
+F 0 "C7" V 4496 2425 50  0000 C CNN
+F 1 "0.1u" V 4587 2425 50  0000 C CNN
+F 2 "Capacitors_SMD:C_0805_HandSoldering" H -525 350 50  0001 C CNN
+F 3 "" H -525 350 50  0001 C CNN
+	1    4725 2425
+	0    1    1    0   
+$EndComp
+$Comp
+L GND #PWR047
+U 1 1 589B711E
+P 4450 2075
+F 0 "#PWR047" H -475 -100 50  0001 C CNN
+F 1 "GND" H 4455 1902 50  0000 C CNN
+F 2 "" H -475 150 50  0001 C CNN
+F 3 "" H -475 150 50  0001 C CNN
+	1    4450 2075
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4975 5150 4975 5325
+Wire Wire Line
+	5275 5325 5275 5150
+Wire Wire Line
+	4475 3100 4400 3100
+Wire Wire Line
+	4400 3100 4400 3200
+Wire Wire Line
+	4400 3200 4475 3200
+Wire Wire Line
+	4475 3300 4300 3300
+Wire Wire Line
+	4300 3300 4300 3000
+Wire Wire Line
+	4300 3000 4475 3000
+Wire Wire Line
+	5125 1625 5125 2500
+Wire Wire Line
+	4825 2075 5125 2075
+Connection ~ 5125 2075
+Wire Wire Line
+	4825 2425 5125 2425
+Connection ~ 5125 2425
+Wire Wire Line
+	4925 2500 4925 2425
+Connection ~ 4925 2425
+Wire Wire Line
+	4625 2075 4450 2075
+Wire Wire Line
+	4625 2425 4450 2425
+$Comp
+L GND #PWR048
+U 1 1 589B7135
+P 4450 2425
+F 0 "#PWR048" H -475 -100 50  0001 C CNN
+F 1 "GND" H 4455 2252 50  0000 C CNN
+F 2 "" H -475 150 50  0001 C CNN
+F 3 "" H -475 150 50  0001 C CNN
+	1    4450 2425
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5325 1900 5325 2500
+$Comp
+L +5V #PWR049
+U 1 1 589B713C
+P 5325 1900
+F 0 "#PWR049" H -475 -25 50  0001 C CNN
+F 1 "+5V" H 5340 2073 50  0000 C CNN
+F 2 "" H -475 125 50  0001 C CNN
+F 3 "" H -475 125 50  0001 C CNN
+	1    5325 1900
+	1    0    0    -1  
+$EndComp
+$Comp
+L C_Small C8
+U 1 1 589B7142
+P 5600 2425
+F 0 "C8" V 5371 2425 50  0000 C CNN
+F 1 "0.1u" V 5462 2425 50  0000 C CNN
+F 2 "Capacitors_SMD:C_0805_HandSoldering" H 350 350 50  0001 C CNN
+F 3 "" H 350 350 50  0001 C CNN
+	1    5600 2425
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	5325 2425 5500 2425
+Connection ~ 5325 2425
+Wire Wire Line
+	5700 2425 5875 2425
+$Comp
+L GND #PWR050
+U 1 1 589B714C
+P 5875 2425
+F 0 "#PWR050" H -475 -100 50  0001 C CNN
+F 1 "GND" H 5880 2252 50  0000 C CNN
+F 2 "" H -475 150 50  0001 C CNN
+F 3 "" H -475 150 50  0001 C CNN
+	1    5875 2425
+	1    0    0    -1  
+$EndComp
+NoConn ~ 4475 3400
+Wire Wire Line
+	5125 1625 5075 1625
+Wire Wire Line
+	5775 4600 6200 4600
+Wire Wire Line
+	5775 4250 6200 4250
+$Comp
+L C_Small C9
+U 1 1 589B715C
+P 6300 4250
+F 0 "C9" V 6400 4250 50  0000 C CNN
+F 1 "10pF" V 6200 4250 50  0000 C CNN
+F 2 "Capacitors_SMD:C_0805_HandSoldering" H 1050 2175 50  0001 C CNN
+F 3 "" H 1050 2175 50  0001 C CNN
+	1    6300 4250
+	0    1    1    0   
+$EndComp
+$Comp
+L C_Small C10
+U 1 1 589B7163
+P 6300 4600
+F 0 "C10" V 6400 4600 50  0000 C CNN
+F 1 "10pF" V 6200 4625 50  0000 C CNN
+F 2 "Capacitors_SMD:C_0805_HandSoldering" H 1050 2525 50  0001 C CNN
+F 3 "" H 1050 2525 50  0001 C CNN
+	1    6300 4600
+	0    1    1    0   
+$EndComp
+$Comp
+L Crystal_Small Y2
+U 1 1 589B716A
+P 5850 4425
+F 0 "Y2" V 5804 4513 50  0000 L CNN
+F 1 "16MHz" V 5895 4513 50  0000 L CNN
+F 2 "caribou:SMD-2520" H 450 -450 50  0001 C CNN
+F 3 "" H 450 -450 50  0001 C CNN
+	1    5850 4425
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	5850 4325 5850 4250
+Connection ~ 5850 4250
+Wire Wire Line
+	5850 4525 5850 4600
+Connection ~ 5850 4600
+Wire Wire Line
+	6400 4250 6550 4250
+Wire Wire Line
+	6550 4250 6550 4800
+Wire Wire Line
+	6400 4600 6550 4600
+Connection ~ 6550 4600
+$Comp
+L GND #PWR051
+U 1 1 589B7179
+P 6550 4800
+F 0 "#PWR051" H 6600 4850 50  0001 C CNN
+F 1 "GND" H 6555 4627 50  0000 C CNN
+F 2 "" H 1100 -375 50  0001 C CNN
+F 3 "" H 1100 -375 50  0001 C CNN
+	1    6550 4800
+	1    0    0    -1  
+$EndComp
+Text HLabel 4475 3500 0    60   Input ~ 0
+~CS
+Text HLabel 4475 3600 0    60   Input ~ 0
+SCK
+Text HLabel 4475 3700 0    60   Input ~ 0
+SI
+Text HLabel 4475 3800 0    60   Output ~ 0
+SO
+Text HLabel 4475 3900 0    60   Output ~ 0
+~INT
+Text HLabel 5775 3000 2    60   BiDi ~ 0
+CANH
+Text HLabel 5775 3250 2    60   BiDi ~ 0
+CANL
+Text HLabel 5075 1625 0    60   UnSpc ~ 0
+V_IO
+$EndSCHEMATC

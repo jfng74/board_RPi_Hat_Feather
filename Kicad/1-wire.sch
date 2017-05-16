@@ -1,0 +1,348 @@
+EESchema Schematic File Version 2
+LIBS:RPi_Hat-rescue
+LIBS:power
+LIBS:device
+LIBS:transistors
+LIBS:conn
+LIBS:linear
+LIBS:regul
+LIBS:74xx
+LIBS:cmos4000
+LIBS:adc-dac
+LIBS:memory
+LIBS:xilinx
+LIBS:microcontrollers
+LIBS:dsp
+LIBS:microchip
+LIBS:analog_switches
+LIBS:motorola
+LIBS:texas
+LIBS:intel
+LIBS:audio
+LIBS:interface
+LIBS:digital-audio
+LIBS:philips
+LIBS:display
+LIBS:cypress
+LIBS:siliconi
+LIBS:opto
+LIBS:atmel
+LIBS:contrib
+LIBS:valves
+LIBS:jfng
+LIBS:RPi_Hat-cache
+EELAYER 26 0
+EELAYER END
+$Descr USLetter 11000 8500
+encoding utf-8
+Sheet 5 7
+Title ""
+Date "2017-02-01"
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L PCA9306-RESCUE-RPi_Hat U6
+U 1 1 58780326
+P 3850 3350
+AR Path="/58780326" Ref="U6"  Part="1" 
+AR Path="/58965077/58780326" Ref="U6"  Part="1" 
+F 0 "U6" H 3950 3750 60  0000 C CNN
+F 1 "PCA9306" H 3850 2950 60  0000 C CNN
+F 2 "Housings_SOIC:SOIC-8_3.9x4.9mm_Pitch1.27mm" H 3800 3050 60  0001 C CNN
+F 3 "" H 3800 3050 60  0000 C CNN
+F 4 "PCA9306D,118" H 3850 3350 60  0001 C CNN "Manufacturer Part Number"
+F 5 "568-4215-1-ND" H 3850 3350 60  0001 C CNN "Digikey Part Number"
+	1    3850 3350
+	1    0    0    -1  
+$EndComp
+$Comp
+L +3.3V #PWR028
+U 1 1 58780337
+P 3175 3000
+F 0 "#PWR028" H 3175 2960 30  0001 C CNN
+F 1 "+3.3V" H 3175 3125 30  0000 C CNN
+F 2 "" H 3175 3000 60  0000 C CNN
+F 3 "" H 3175 3000 60  0000 C CNN
+	1    3175 3000
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR029
+U 1 1 587A7597
+P 5425 2675
+F 0 "#PWR029" H 5425 2675 30  0001 C CNN
+F 1 "GND" H 5425 2605 30  0001 C CNN
+F 2 "" H 5425 2675 60  0000 C CNN
+F 3 "" H 5425 2675 60  0000 C CNN
+	1    5425 2675
+	1    0    0    -1  
+$EndComp
+$Comp
+L C_Small C13
+U 1 1 587A76A7
+P 5275 2550
+F 0 "C13" V 5400 2500 50  0000 L CNN
+F 1 "0.1u" V 5150 2425 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0805_HandSoldering" H 5275 2550 50  0001 C CNN
+F 3 "" H 5275 2550 50  0000 C CNN
+	1    5275 2550
+	0    1    1    0   
+$EndComp
+$Comp
+L R R1
+U 1 1 587A778D
+P 4550 3000
+F 0 "R1" V 4630 3000 50  0000 C CNN
+F 1 "200k" V 4450 3000 50  0000 C CNN
+F 2 "Resistors_SMD:R_0805_HandSoldering" V 4480 3000 50  0001 C CNN
+F 3 "" H 4550 3000 50  0000 C CNN
+	1    4550 3000
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	4350 3400 5150 3400
+Wire Wire Line
+	4350 3525 5150 3525
+Wire Wire Line
+	3350 3275 3175 3275
+Wire Wire Line
+	3175 3275 3175 3000
+Wire Wire Line
+	4700 3275 4350 3275
+Wire Wire Line
+	4550 3150 4350 3150
+Wire Wire Line
+	4550 2550 5175 2550
+Wire Wire Line
+	5375 2550 5425 2550
+Wire Wire Line
+	5425 2550 5425 2675
+$Comp
+L GND #PWR030
+U 1 1 5884E7E8
+P 3325 3025
+F 0 "#PWR030" H 3325 3025 30  0001 C CNN
+F 1 "GND" H 3325 2955 30  0001 C CNN
+F 2 "" H 3325 3025 60  0000 C CNN
+F 3 "" H 3325 3025 60  0000 C CNN
+	1    3325 3025
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	3350 3150 3325 3150
+Wire Wire Line
+	3325 3150 3325 3025
+$Comp
+L C C12
+U 1 1 58923DFD
+P 6400 3075
+F 0 "C12" H 6400 3175 40  0000 L CNN
+F 1 "0.1uf" H 6406 2990 40  0000 L CNN
+F 2 "Capacitors_SMD:C_0805_HandSoldering" H 6438 2925 30  0001 C CNN
+F 3 "" H 6400 3075 60  0000 C CNN
+F 4 "810-C1005X5R1H104K" H 6400 3075 60  0001 C CNN "Mouser Part No."
+	1    6400 3075
+	-1   0    0    -1  
+$EndComp
+$Comp
+L C C11
+U 1 1 58923E99
+P 6775 3050
+F 0 "C11" H 6775 3150 40  0000 L CNN
+F 1 "1uf" H 6781 2965 40  0000 L CNN
+F 2 "Capacitors_SMD:C_0805_HandSoldering" H 6813 2900 30  0001 C CNN
+F 3 "" H 6775 3050 60  0000 C CNN
+F 4 "810-C1005X5R1H104K" H 6775 3050 60  0001 C CNN "Mouser Part No."
+	1    6775 3050
+	-1   0    0    -1  
+$EndComp
+$Comp
+L GND #PWR031
+U 1 1 5892526A
+P 6600 3275
+F 0 "#PWR031" H 5200 -2050 50  0001 C CNN
+F 1 "GND" H 6605 3102 50  0000 C CNN
+F 2 "" H 5200 -1800 50  0001 C CNN
+F 3 "" H 5200 -1800 50  0001 C CNN
+	1    6600 3275
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	6775 2850 6775 2900
+Wire Wire Line
+	6775 3250 6775 3200
+$Comp
+L DS2482-100 U7
+U 1 1 5892EED6
+P 5675 3675
+F 0 "U7" H 5850 4300 60  0000 C CNN
+F 1 "DS2482-100" H 6025 3050 60  0000 C CNN
+F 2 "Housings_SOIC:SOIC-8_3.9x4.9mm_Pitch1.27mm" H 2850 -2150 60  0001 C CNN
+F 3 "" H 2850 -2150 60  0000 C CNN
+	1    5675 3675
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5150 3875 4975 3875
+Wire Wire Line
+	4975 3875 4975 4075
+Wire Wire Line
+	5150 3975 4975 3975
+Connection ~ 4975 3975
+$Comp
+L GND #PWR032
+U 1 1 5892FAC8
+P 4975 4075
+F 0 "#PWR032" H 2875 -2500 50  0001 C CNN
+F 1 "GND" H 4980 3902 50  0000 C CNN
+F 2 "" H 2875 -2250 50  0001 C CNN
+F 3 "" H 2875 -2250 50  0001 C CNN
+	1    4975 4075
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR033
+U 1 1 5892FB06
+P 5675 4500
+F 0 "#PWR033" H 2875 -2425 50  0001 C CNN
+F 1 "GND" H 5680 4327 50  0000 C CNN
+F 2 "" H 2875 -2175 50  0001 C CNN
+F 3 "" H 2875 -2175 50  0001 C CNN
+	1    5675 4500
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5675 4500 5675 4425
+NoConn ~ 6200 3525
+Wire Wire Line
+	5675 2850 5675 2925
+Wire Wire Line
+	5675 2850 6775 2850
+Wire Wire Line
+	6400 2850 6400 2925
+Wire Wire Line
+	6400 3250 6775 3250
+Wire Wire Line
+	6400 3250 6400 3225
+$Comp
+L +5V #PWR034
+U 1 1 58930FE6
+P 6600 2725
+F 0 "#PWR034" H 5000 -1375 50  0001 C CNN
+F 1 "+5V" H 6615 2898 50  0000 C CNN
+F 2 "" H 5000 -1225 50  0001 C CNN
+F 3 "" H 5000 -1225 50  0001 C CNN
+	1    6600 2725
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	6600 2850 6600 2725
+Connection ~ 6600 2850
+Wire Wire Line
+	6600 3250 6600 3275
+Connection ~ 6600 3250
+$Comp
+L GND #PWR035
+U 1 1 589346CB
+P 6650 4075
+F 0 "#PWR035" H 6650 4075 30  0001 C CNN
+F 1 "GND" H 6650 4005 30  0001 C CNN
+F 2 "" H 6650 4075 60  0000 C CNN
+F 3 "" H 6650 4075 60  0000 C CNN
+	1    6650 4075
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6200 3875 6775 3875
+Wire Wire Line
+	6775 3975 6650 3975
+Wire Wire Line
+	6650 3975 6650 4075
+Wire Wire Line
+	7675 3875 7875 3875
+Wire Wire Line
+	7675 3975 7875 3975
+$Comp
+L DS9503 U8
+U 1 1 589346DA
+P 7125 3975
+F 0 "U8" H 7325 4175 60  0000 C CNN
+F 1 "DS9503" H 7225 3775 60  0000 C CNN
+F 2 "caribou:TSOC-6" H 7125 3975 60  0001 C CNN
+F 3 "" H 7125 3975 60  0000 C CNN
+F 4 "DS9503P+T&R" H 7425 4275 60  0001 C CNN "Manufacturer Part Number"
+F 5 "DS9503P+T&RCT-ND" H 7525 4375 60  0001 C CNN "Digikey Part Number"
+	1    7125 3975
+	1    0    0    -1  
+$EndComp
+Text HLabel 3350 3400 0    60   Input ~ 0
+SCL
+Text HLabel 3350 3525 0    60   BiDi ~ 0
+SDA
+Text HLabel 7875 3875 2    60   BiDi ~ 0
+1_WIRE_IO
+Text HLabel 7875 3975 2    60   UnSpc ~ 0
+1_WIRE_GND
+Wire Wire Line
+	4700 2425 4700 3275
+Connection ~ 4700 2550
+Wire Wire Line
+	4550 2850 4550 2550
+$Comp
+L +5V #PWR036
+U 1 1 589C5AC0
+P 4700 2425
+F 0 "#PWR036" H -200 -50 50  0001 C CNN
+F 1 "+5V" H 4715 2598 50  0000 C CNN
+F 2 "" H -200 100 50  0001 C CNN
+F 3 "" H -200 100 50  0001 C CNN
+	1    4700 2425
+	1    0    0    -1  
+$EndComp
+Connection ~ 6400 2850
+Text Label 6275 3875 0    60   ~ 0
+1_wire
+Text Label 4550 3400 0    60   ~ 0
+_scl
+Text Label 4550 3525 0    60   ~ 0
+_sda
+$Comp
+L R R2
+U 1 1 589D4139
+P 4850 3000
+F 0 "R2" V 4930 3000 50  0000 C CNN
+F 1 "4.7k" V 4750 3000 50  0000 C CNN
+F 2 "Resistors_SMD:R_0805_HandSoldering" V 4780 3000 50  0001 C CNN
+F 3 "" H 4850 3000 50  0000 C CNN
+	1    4850 3000
+	-1   0    0    1   
+$EndComp
+$Comp
+L R R3
+U 1 1 589D4175
+P 5125 3000
+F 0 "R3" V 5205 3000 50  0000 C CNN
+F 1 "4.7k" V 5025 3000 50  0000 C CNN
+F 2 "Resistors_SMD:R_0805_HandSoldering" V 5055 3000 50  0001 C CNN
+F 3 "" H 5125 3000 50  0000 C CNN
+	1    5125 3000
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	4850 2850 4850 2550
+Connection ~ 4850 2550
+Wire Wire Line
+	5125 2550 5125 2850
+Connection ~ 5125 2550
+Wire Wire Line
+	4850 3150 4850 3525
+Connection ~ 4850 3525
+Wire Wire Line
+	5125 3150 5125 3400
+Connection ~ 5125 3400
+$EndSCHEMATC
