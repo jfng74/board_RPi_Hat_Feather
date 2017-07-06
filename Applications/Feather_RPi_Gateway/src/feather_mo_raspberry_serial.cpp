@@ -3,8 +3,13 @@
 #include "Arduino.h"
 #include <SPI.h>
 #include <RH_RF95.h>
+#include <FanCompostMsg.h>
+//#include <Adafruit_FeatherOLED.h>
 
-#define FEATHER_MSG_HEADER 0xaa
+
+// m0 & 32u4 feathers
+#define VBATPIN A7
+
 
 /* for feather m0  */
 #define RFM95_CS 8
@@ -13,15 +18,23 @@
 // Change to 434.0 or other frequency, must match RX's freq!
 #define RF95_FREQ 433.0
 
+//Adafruit_FeatherOLED oled = Adafruit_FeatherOLED();
+
 // Singleton instance of the radio driver
 RH_RF95 rf95(RFM95_CS, RFM95_INT);
+
 uint8_t incomingByte = 0;
 
+float getBatteryVoltage();
+void parseRF_data();
+void parseSerial_data(void);
 uint8_t buf[RH_RF95_MAX_MESSAGE_LEN];
 uint8_t buf_out[RH_RF95_MAX_MESSAGE_LEN];
 uint8_t len;
 uint8_t Serial1_input_buffer[60];
 
+int rx_count=0;
+int tx_count=0;
 
 void setup() {
 	pinMode(RFM95_RST, OUTPUT);
@@ -29,6 +42,15 @@ void setup() {
 	digitalWrite(13, LOW);
 	digitalWrite(RFM95_RST, HIGH);
 //	Serial1.begin(9600);
+//
+//	oled.init();
+//  oled.setBatteryVisible(true);
+//	oled.clearDisplay();
+//	oled.println("OLED_SETUP : 1");
+//	oled.println("OLED_SETUP : 2");
+//	oled.println("OLED_SETUP : 3");
+//	oled.println("OLED_SETUP : 4");
+//	oled.display();
 	Serial1.begin(9600);
 //	Serial1.println("setup()");
 	// manual reset
@@ -56,58 +78,133 @@ void setup() {
 	// The default transmitter power is 13dBm, using PA_BOOST.
 	// If you are using RFM95/96/97/98 modules which uses the PA_BOOST transmitter pin, then
 	// you can set transmitter powers from 5 to 23 dBm:
-	rf95.setTxPower(5, false);
+	rf95.setTxPower(23, false);
 
-	Serial1.print("Allo");
+	Serial.print("Setup ok!");
 }
 
 void loop() {
 	// put your main code here, to run repeatedly:
+
+
+  // get the current voltage of the battery from
+  // one of the platform specific functions below
+//  float battery = getBatteryVoltage();
+
+  // update the battery icon
+//  oled.setBattery(battery);
+//  oled.renderBattery();
+
 	if (rf95.available()){
-		// Should be a message for us now
-		//	  .print("Buffer length : ");
-		len = sizeof(buf);
-		//	  Serial1.println(len);
-
-
+		Serial.println("*******************************************");
+		Serial.println("RF95 data available");
 		if (rf95.recv(buf, &len)) {
-//			digitalWrite(13, HIGH);
+			Serial.println("RF95 Receive");
+			Serial.print("len buffer : ");
+			len = sizeof(buf);
+			Serial.println(len);
+			parseRF_data();
 			Serial1.write((char*)buf, len);
-//			digitalWrite(13, LOW);
-			/*
-			Serial1.print("Buffer length : ");
-			Serial1.println(len);
 
-			for(int i=0;i<len;i++){
-			  Serial1.println(buf[i],HEX);
-			}
-			  */
 		}
 		else
 		{
-			//Receive failed
+			Serial.println("RF95 Receive : Failed");
 		}
+		Serial.println("*******************************************");
 	}
-	while (Serial1.available()) {
+	if(Serial1.available()) {
 		incomingByte = Serial1.read();
-//		Serial1.println("Incoming bytes...");
 		if(incomingByte == FEATHER_MSG_HEADER){
-//			Serial1.println("FEATHER_MSG_HEADER");
-			digitalWrite(13, HIGH);
+			int read_bytes=0;
 			buf_out[0]=incomingByte;
-			Serial1.readBytes((char*)Serial1_input_buffer, 8);
-			for(int i = 0;i<8;i++){
-				buf_out[i+1]=Serial1_input_buffer[i];
-			}
+			read_bytes = Serial1.readBytes((char*)Serial1_input_buffer, 255);
+			Serial.println("###########################################");
+			Serial.print("Bytes lu : ");Serial.println(read_bytes+1);
 
-//			for(int i=0;i<9;i++){
-//				Serial1.print(buf_out[i],HEX);
-//			}
-//			Serial1.println("Fin reception");
-			rf95.send(buf_out, 9);
+			for(int i=0;i<read_bytes;i++){
+				buf_out[i+1]=Serial1_input_buffer[i];
+				Serial.print("[");Serial.print(buf_out[i+1]);Serial.print("]");
+			}
+			Serial.println(" ");
+			Serial.println("Envoie des donnees sur le rf");
+
+
+			parseSerial_data();
+			rf95.send(buf_out, read_bytes+1);
 			rf95.waitPacketSent();
-//			delay(100);
+			Serial.println("###########################################");
 			digitalWrite(13, LOW);
 		}
+		else{
+			int read_bytes=0;
+			Serial.print("Read all false byte : ");
+			read_bytes = Serial1.readBytes((char*)Serial1_input_buffer, 255);
+			Serial.println(read_bytes);
+		}
+	}
+}
+
+float getBatteryVoltage() {
+
+	float measuredvbat = analogRead(VBATPIN);
+
+  measuredvbat *= 2;    // we divided by 2, so multiply back
+  measuredvbat *= 3.3;  // Multiply by 3.3V, our reference voltage
+  measuredvbat /= 1024; // convert to voltage
+
+  return measuredvbat;
+
+}
+
+void parseSerial_data(void){
+//  byte float_array[4];
+//  byte u16_array[2];
+//  byte uint32_array[4];
+//  int16_t node_id;
+//  uint16_t conductivite;
+//	float t_1,t_2,t_3,h_1,batt_voltage,pression;
+  if (buf_out[0]==FEATHER_MSG_HEADER){
+    Serial.println("parseSerial_data() : FEATHER_MSG_HEADER");
+  }
+  if (buf_out[0]==FEATHER_MSG_HEADER && buf_out[1]==FEATHER_MSG_SEND_ALL_TEMP){
+    Serial.println("parseSerial_data() : FEATHER_MSG_SEND_ALL_TEMP");
+		if(buf_out[3] == SEND_ALL_TEMP){
+			Serial.println("FEATHER_MSG_SEND_ALL_TEMP : FEATHER_MSG_SEND_ALL_TEMP");
+		}
+  }
+	else if (buf_out[0]==FEATHER_MSG_HEADER && buf_out[1]==FEATHER_MSG_SEND_SSR_NODE_CFG){
+		Serial.println("parseSerial_data() : FEATHER_MSG_SEND_SSR_NODE_CFG");
+	}
+}
+
+
+void parseRF_data(void){
+//  byte float_array[4];
+//  byte u16_array[2];
+//  byte uint32_array[4];
+//  int16_t node_id;
+//  uint16_t conductivite;
+//	float t_1,t_2,t_3,h_1,batt_voltage,pression;
+
+  if (buf[0]==FEATHER_MSG_HEADER){
+    Serial.println("parseRF_data() : FEATHER_MSG_HEADER");
+  }
+  if (buf[0]==FEATHER_MSG_HEADER && buf[1]==FEATHER_MSG_NODE_READY){
+    Serial.println("parseRF_data() : FEATHER_MSG_NODE_READY");
+  }
+	else if (buf[0]==FEATHER_MSG_HEADER && buf[1]==FEATHER_MSG_SSR_READY){
+		Serial.println("parseRF_data() : FEATHER_MSG_SSR_READY");
+	}
+	else if (buf[0]==FEATHER_MSG_HEADER && buf[1]==FEATHER_MSG_READY_FOR_COMMANDS){
+		Serial.println("parseRF_data() : FEATHER_MSG_READY_FOR_COMMANDS");
+	}
+	else if (buf[0]==FEATHER_MSG_HEADER && buf[1]==FEATHER_MSG_COMPOST_NODE_DATA){
+		Serial.println("parseRF_data() : FEATHER_MSG_COMPOST_NODE_DATA");
+	}
+	else if (buf[0]==FEATHER_MSG_HEADER && buf[1]==FEATHER_MSG_RESPONSE_DATA){
+		Serial.println("parseRF_data() : FEATHER_MSG_RESPONSE_DATA");
+		if(buf[3]==SEND_ALL_CFG)
+			Serial.println("FEATHER_MSG_RESPONSE_DATA : SEND_ALL_CFG");
 	}
 }
