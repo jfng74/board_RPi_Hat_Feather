@@ -1,4 +1,35 @@
-EESchema Schematic File Version 4
+EESchema Schematic File Version 2
+LIBS:RPi_Hat-rescue
+LIBS:power
+LIBS:device
+LIBS:transistors
+LIBS:conn
+LIBS:linear
+LIBS:regul
+LIBS:74xx
+LIBS:cmos4000
+LIBS:adc-dac
+LIBS:memory
+LIBS:xilinx
+LIBS:microcontrollers
+LIBS:dsp
+LIBS:microchip
+LIBS:analog_switches
+LIBS:motorola
+LIBS:texas
+LIBS:intel
+LIBS:audio
+LIBS:interface
+LIBS:digital-audio
+LIBS:philips
+LIBS:display
+LIBS:cypress
+LIBS:siliconi
+LIBS:opto
+LIBS:atmel
+LIBS:contrib
+LIBS:valves
+LIBS:jfng
 LIBS:RPi_Hat-cache
 EELAYER 26 0
 EELAYER END
@@ -70,7 +101,7 @@ F8 "CANL" B R 8475 2250 60
 F9 "V_IO" U L 7450 1750 60 
 $EndSheet
 $Comp
-L RPi_Hat-rescue:CONN_01X02-RESCUE-RPi_Hat CAN1
+L CONN_01X02 CAN1
 U 1 1 589BA6CF
 P 9425 1750
 F 0 "CAN1" H 9503 1791 50  0000 L CNN
@@ -81,7 +112,7 @@ F 3 "" H 8125 -650 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L RPi_Hat-rescue:CONN_01X02-RESCUE-RPi_Hat CAN2
+L CONN_01X02 CAN2
 U 1 1 589BA6D6
 P 9450 3925
 F 0 "CAN2" H 9528 3966 50  0000 L CNN
@@ -96,7 +127,7 @@ CAN+
 Text Label 9100 2675 0    60   ~ 0
 CAN-
 $Comp
-L RPi_Hat-rescue:CONN_01X04-RESCUE-RPi_Hat I2C-1
+L CONN_01X04 I2C-1
 U 1 1 589E2857
 P 9425 1325
 F 0 "I2C-1" H 9503 1366 50  0000 L CNN
@@ -107,7 +138,7 @@ F 3 "" H 175 -375 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L RPi_Hat-rescue:GND-RESCUE-RPi_Hat #PWR01
+L GND #PWR01
 U 1 1 589E2862
 P 9075 1100
 F 0 "#PWR01" H 9075 850 50  0001 C CNN
@@ -118,7 +149,7 @@ F 3 "" H 9075 1100 50  0000 C CNN
 	-1   0    0    1   
 $EndComp
 $Comp
-L RPi_Hat-rescue:CONN_01X03-RESCUE-RPi_Hat 1Wire-1
+L CONN_01X03 1Wire-1
 U 1 1 58A1C4EE
 P 1125 2175
 F 0 "1Wire-1" H 1203 2216 50  0000 L CNN
@@ -129,7 +160,7 @@ F 3 "" H -4650 -2925 50  0001 C CNN
 	-1   0    0    1   
 $EndComp
 $Comp
-L RPi_Hat-rescue:+5V-RESCUE-RPi_Hat #PWR02
+L +5V #PWR02
 U 1 1 58A1C4F5
 P 1675 2025
 F 0 "#PWR02" H 75  -2075 50  0001 C CNN
@@ -140,7 +171,7 @@ F 3 "" H 75  -1925 50  0001 C CNN
 	-1   0    0    -1  
 $EndComp
 $Comp
-L jfng:CAN_NODE_JUNCTION J5
+L CAN_NODE_JUNCTION J5
 U 1 1 58AA1A82
 P 8975 2200
 F 0 "J5" H 9203 2246 50  0000 L CNN
@@ -151,7 +182,7 @@ F 3 "" H -800 -1225 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L jfng:CAN_NODE_JUNCTION J4
+L CAN_NODE_JUNCTION J4
 U 1 1 58AB23E0
 P 8975 3125
 F 0 "J4" H 9203 3171 50  0000 L CNN
@@ -178,7 +209,7 @@ CAN-
 Text Label 9000 1900 2    60   ~ 0
 CAN+
 $Comp
-L RPi_Hat-rescue:C_Small-RESCUE-RPi_Hat C15
+L C_Small C15
 U 1 1 590057AA
 P 8500 950
 F 0 "C15" V 8271 950 50  0000 C CNN
@@ -189,7 +220,7 @@ F 3 "" H 3250 -1125 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L RPi_Hat-rescue:GND-RESCUE-RPi_Hat #PWR03
+L GND #PWR03
 U 1 1 59008424
 P 8700 1025
 F 0 "#PWR03" H 8700 775 50  0001 C CNN
@@ -229,7 +260,7 @@ F14 "FEATHER_3.3V" U R 7025 1275 60
 F15 "INT_SQW" I R 7025 1175 60 
 $EndSheet
 $Comp
-L RPi_Hat-rescue:C_Small-RESCUE-RPi_Hat C16
+L C_Small C16
 U 1 1 5936FEF7
 P 1525 2500
 F 0 "C16" V 1400 2500 50  0000 C CNN
@@ -286,9 +317,9 @@ Wire Wire Line
 Wire Wire Line
 	7025 2375 7450 2375
 Wire Wire Line
-	3075 1375 3175 1375
+	3075 1375 3375 1375
 Wire Wire Line
-	3075 1475 3275 1475
+	3075 1475 3375 1475
 Wire Wire Line
 	3275 1475 3275 2075
 Wire Wire Line
@@ -300,7 +331,7 @@ Wire Wire Line
 	3175 1975 3075 1975
 Connection ~ 3175 1375
 Wire Wire Line
-	7025 1275 7225 1275
+	7025 1275 9225 1275
 Wire Wire Line
 	7025 1375 9225 1375
 Wire Wire Line
@@ -329,7 +360,7 @@ Wire Wire Line
 Wire Wire Line
 	1325 2175 1800 2175
 Wire Wire Line
-	1325 2275 1375 2275
+	1325 2275 1800 2275
 Wire Wire Line
 	8600 950  8700 950 
 Wire Wire Line
@@ -352,7 +383,7 @@ Wire Wire Line
 Wire Wire Line
 	1325 2075 1675 2075
 Wire Wire Line
-	1675 2025 1675 2075
+	1675 2025 1675 2500
 Connection ~ 1675 2075
 Wire Wire Line
 	1675 2500 1625 2500
@@ -361,16 +392,4 @@ Wire Wire Line
 Wire Wire Line
 	1375 2500 1375 2275
 Connection ~ 1375 2275
-Wire Wire Line
-	3275 1475 3375 1475
-Wire Wire Line
-	3175 1375 3375 1375
-Wire Wire Line
-	7225 1275 8275 1275
-Wire Wire Line
-	8275 1275 9225 1275
-Wire Wire Line
-	1675 2075 1675 2500
-Wire Wire Line
-	1375 2275 1800 2275
 $EndSCHEMATC

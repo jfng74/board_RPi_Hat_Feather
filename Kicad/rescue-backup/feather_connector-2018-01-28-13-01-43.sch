@@ -1,4 +1,35 @@
-EESchema Schematic File Version 4
+EESchema Schematic File Version 2
+LIBS:RPi_Hat-rescue
+LIBS:power
+LIBS:device
+LIBS:transistors
+LIBS:conn
+LIBS:linear
+LIBS:regul
+LIBS:74xx
+LIBS:cmos4000
+LIBS:adc-dac
+LIBS:memory
+LIBS:xilinx
+LIBS:microcontrollers
+LIBS:dsp
+LIBS:microchip
+LIBS:analog_switches
+LIBS:motorola
+LIBS:texas
+LIBS:intel
+LIBS:audio
+LIBS:interface
+LIBS:digital-audio
+LIBS:philips
+LIBS:display
+LIBS:cypress
+LIBS:siliconi
+LIBS:opto
+LIBS:atmel
+LIBS:contrib
+LIBS:valves
+LIBS:jfng
 LIBS:RPi_Hat-cache
 EELAYER 26 0
 EELAYER END
@@ -15,7 +46,7 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L jfng:FEATHER_MO_LORA Adafruit_Feather-1
+L FEATHER_MO_LORA Adafruit_Feather-1
 U 1 1 587BD5DB
 P 4275 3725
 F 0 "Adafruit_Feather-1" H 5000 2450 60  0000 C CNN
@@ -26,7 +57,7 @@ F 3 "" H 4275 4200 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L RPi_Hat-rescue:GND-RESCUE-RPi_Hat #PWR052
+L GND #PWR052
 U 1 1 587BD966
 P 2750 3250
 F 0 "#PWR052" H 2750 3000 50  0001 C CNN
@@ -119,7 +150,7 @@ SCL
 Text Label 8150 4625 0    60   ~ 0
 SDA
 $Comp
-L RPi_Hat-rescue:GND-RESCUE-RPi_Hat #PWR053
+L GND #PWR053
 U 1 1 587C072D
 P 5900 3225
 F 0 "#PWR053" H 5900 2975 50  0001 C CNN
@@ -220,7 +251,7 @@ Wire Wire Line
 Wire Wire Line
 	5900 3125 5900 3225
 $Comp
-L jfng:FEATHER_WING Adafruit_Feather_Wing-1
+L FEATHER_WING Adafruit_Feather_Wing-1
 U 1 1 587990FA
 P 7425 3650
 F 0 "Adafruit_Feather_Wing-1" H 7875 2375 60  0000 C CNN
@@ -233,7 +264,7 @@ $EndComp
 NoConn ~ 6725 4375
 NoConn ~ 6725 4500
 $Comp
-L RPi_Hat-rescue:+5V-RESCUE-RPi_Hat #PWR054
+L +5V #PWR054
 U 1 1 589285EE
 P 5475 3525
 F 0 "#PWR054" H 150 -225 50  0001 C CNN
@@ -248,7 +279,7 @@ Wire Wire Line
 Wire Wire Line
 	8650 3500 8650 3350
 $Comp
-L RPi_Hat-rescue:+5V-RESCUE-RPi_Hat #PWR055
+L +5V #PWR055
 U 1 1 58928823
 P 8650 3350
 F 0 "#PWR055" H 8700 3400 50  0001 C CNN

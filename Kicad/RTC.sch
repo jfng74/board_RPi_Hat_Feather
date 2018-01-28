@@ -1,35 +1,4 @@
-EESchema Schematic File Version 2
-LIBS:RPi_Hat-rescue
-LIBS:power
-LIBS:device
-LIBS:transistors
-LIBS:conn
-LIBS:linear
-LIBS:regul
-LIBS:74xx
-LIBS:cmos4000
-LIBS:adc-dac
-LIBS:memory
-LIBS:xilinx
-LIBS:microcontrollers
-LIBS:dsp
-LIBS:microchip
-LIBS:analog_switches
-LIBS:motorola
-LIBS:texas
-LIBS:intel
-LIBS:audio
-LIBS:interface
-LIBS:digital-audio
-LIBS:philips
-LIBS:display
-LIBS:cypress
-LIBS:siliconi
-LIBS:opto
-LIBS:atmel
-LIBS:contrib
-LIBS:valves
-LIBS:jfng
+EESchema Schematic File Version 4
 LIBS:RPi_Hat-cache
 EELAYER 26 0
 EELAYER END
@@ -46,7 +15,7 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L DS3231 U1
+L jfng:DS3231 U1
 U 1 1 587B5F3E
 P 4675 2675
 F 0 "U1" H 4575 3150 50  0000 R CNN
@@ -57,7 +26,7 @@ F 3 "" H 4945 2925 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR048
+L RPi_Hat-rescue:GND-RESCUE-RPi_Hat #PWR048
 U 1 1 587B605B
 P 4675 3275
 F 0 "#PWR048" H 4675 3025 50  0001 C CNN
@@ -70,7 +39,7 @@ $EndComp
 Wire Wire Line
 	4675 3175 4675 3275
 $Comp
-L +3.3V #PWR049
+L RPi_Hat-rescue:+3.3V-RESCUE-RPi_Hat #PWR049
 U 1 1 587B639C
 P 4675 1875
 F 0 "#PWR049" H 4675 1725 50  0001 C CNN
@@ -85,7 +54,7 @@ Wire Wire Line
 NoConn ~ 4175 2875
 NoConn ~ 5175 2675
 $Comp
-L Battery_Cell BT1
+L RPi_Hat-rescue:Battery_Cell-RESCUE-RPi_Hat BT1
 U 1 1 587B6407
 P 5450 3075
 F 0 "BT1" H 5550 3175 50  0000 L CNN
@@ -103,7 +72,7 @@ Wire Wire Line
 	5450 3225 4675 3225
 Connection ~ 4675 3225
 $Comp
-L PWR_FLAG #FLG050
+L RPi_Hat-rescue:PWR_FLAG-RESCUE-RPi_Hat #FLG050
 U 1 1 589372D2
 P 6050 2800
 F 0 "#FLG050" H 350 175 50  0001 C CNN
@@ -121,7 +90,7 @@ SCL
 Text HLabel 4175 2675 0    60   BiDi ~ 0
 SDA
 $Comp
-L C_Small C14
+L RPi_Hat-rescue:C_Small-RESCUE-RPi_Hat C14
 U 1 1 589C24D4
 P 5625 2025
 F 0 "C14" H 5717 2071 50  0000 L CNN
@@ -135,7 +104,7 @@ Wire Wire Line
 	4675 1925 5625 1925
 Connection ~ 4675 1925
 $Comp
-L GND #PWR051
+L RPi_Hat-rescue:GND-RESCUE-RPi_Hat #PWR051
 U 1 1 589C27AC
 P 5625 2275
 F 0 "#PWR051" H 475 -275 50  0001 C CNN

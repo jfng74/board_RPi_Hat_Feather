@@ -1,0 +1,4 @@
+(sym_lib_table
+  (lib (name RPi_Hat-rescue)(type Legacy)(uri ${KIPRJMOD}/RPi_Hat-rescue.lib)(options "")(descr ""))
+  (lib (name jfng)(type Legacy)(uri /home/caribou/Kicad_project/jfng_library/jfng.lib)(options "")(descr ""))
+)

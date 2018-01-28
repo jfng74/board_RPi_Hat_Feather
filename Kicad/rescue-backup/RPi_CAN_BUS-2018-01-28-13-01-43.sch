@@ -1,4 +1,35 @@
-EESchema Schematic File Version 4
+EESchema Schematic File Version 2
+LIBS:RPi_Hat-rescue
+LIBS:power
+LIBS:device
+LIBS:transistors
+LIBS:conn
+LIBS:linear
+LIBS:regul
+LIBS:74xx
+LIBS:cmos4000
+LIBS:adc-dac
+LIBS:memory
+LIBS:xilinx
+LIBS:microcontrollers
+LIBS:dsp
+LIBS:microchip
+LIBS:analog_switches
+LIBS:motorola
+LIBS:texas
+LIBS:intel
+LIBS:audio
+LIBS:interface
+LIBS:digital-audio
+LIBS:philips
+LIBS:display
+LIBS:cypress
+LIBS:siliconi
+LIBS:opto
+LIBS:atmel
+LIBS:contrib
+LIBS:valves
+LIBS:jfng
 LIBS:RPi_Hat-cache
 EELAYER 26 0
 EELAYER END
@@ -15,7 +46,7 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L jfng:MCP25625 U4
+L MCP25625 U4
 U 1 1 589B5811
 P 4050 3875
 F 0 "U4" H 4450 5150 60  0000 C CNN
@@ -26,7 +57,7 @@ F 3 "" H -525 675 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L RPi_Hat-rescue:GND-RESCUE-RPi_Hat #PWR030
+L GND #PWR030
 U 1 1 589B5818
 P 3900 5300
 F 0 "#PWR030" H 3950 5350 50  0001 C CNN
@@ -37,7 +68,7 @@ F 3 "" H -1550 125 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L RPi_Hat-rescue:GND-RESCUE-RPi_Hat #PWR031
+L GND #PWR031
 U 1 1 589B581E
 P 4200 5300
 F 0 "#PWR031" H 4250 5350 50  0001 C CNN
@@ -54,7 +85,7 @@ NoConn ~ 3400 4175
 NoConn ~ 3400 4075
 NoConn ~ 3400 3975
 $Comp
-L RPi_Hat-rescue:C_Small-RESCUE-RPi_Hat C1
+L C_Small C1
 U 1 1 589B582B
 P 3650 2050
 F 0 "C1" V 3421 2050 50  0000 C CNN
@@ -65,7 +96,7 @@ F 3 "" H -1600 -25 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L RPi_Hat-rescue:C_Small-RESCUE-RPi_Hat C2
+L C_Small C2
 U 1 1 589B5832
 P 3650 2400
 F 0 "C2" V 3421 2400 50  0000 C CNN
@@ -76,7 +107,7 @@ F 3 "" H -1600 325 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L RPi_Hat-rescue:GND-RESCUE-RPi_Hat #PWR032
+L GND #PWR032
 U 1 1 589B5839
 P 3375 2050
 F 0 "#PWR032" H -1550 -125 50  0001 C CNN
@@ -118,7 +149,7 @@ Wire Wire Line
 Wire Wire Line
 	3550 2400 3375 2400
 $Comp
-L RPi_Hat-rescue:GND-RESCUE-RPi_Hat #PWR033
+L GND #PWR033
 U 1 1 589B5850
 P 3375 2400
 F 0 "#PWR033" H -1550 -125 50  0001 C CNN
@@ -129,7 +160,7 @@ F 3 "" H -1550 125 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L RPi_Hat-rescue:+3.3V-RESCUE-RPi_Hat #PWR034
+L +3.3V #PWR034
 U 1 1 589B5856
 P 4050 1875
 F 0 "#PWR034" H -1550 -25 50  0001 C CNN
@@ -142,7 +173,7 @@ $EndComp
 Wire Wire Line
 	4250 1875 4250 2475
 $Comp
-L RPi_Hat-rescue:+5V-RESCUE-RPi_Hat #PWR035
+L +5V #PWR035
 U 1 1 589B585D
 P 4250 1875
 F 0 "#PWR035" H -1550 -50 50  0001 C CNN
@@ -153,7 +184,7 @@ F 3 "" H -1550 100 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L RPi_Hat-rescue:C_Small-RESCUE-RPi_Hat C3
+L C_Small C3
 U 1 1 589B5863
 P 4525 2400
 F 0 "C3" V 4296 2400 50  0000 C CNN
@@ -169,7 +200,7 @@ Connection ~ 4250 2400
 Wire Wire Line
 	4625 2400 4800 2400
 $Comp
-L RPi_Hat-rescue:GND-RESCUE-RPi_Hat #PWR036
+L GND #PWR036
 U 1 1 589B586D
 P 4800 2400
 F 0 "#PWR036" H -1550 -125 50  0001 C CNN
@@ -180,7 +211,7 @@ F 3 "" H -1550 125 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L RPi_Hat-rescue:C_Small-RESCUE-RPi_Hat C4
+L C_Small C4
 U 1 1 589B5879
 P 5200 4225
 F 0 "C4" V 5300 4225 50  0000 C CNN
@@ -191,7 +222,7 @@ F 3 "" H -50 2150 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L RPi_Hat-rescue:C_Small-RESCUE-RPi_Hat C5
+L C_Small C5
 U 1 1 589B5880
 P 5200 4575
 F 0 "C5" V 5300 4575 50  0000 C CNN
@@ -202,7 +233,7 @@ F 3 "" H -50 2500 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L RPi_Hat-rescue:Crystal_Small-RESCUE-RPi_Hat Y1
+L Crystal_Small Y1
 U 1 1 589B5887
 P 4750 4400
 F 0 "Y1" V 4704 4488 50  0000 L CNN
@@ -230,7 +261,7 @@ Wire Wire Line
 	5300 4575 5450 4575
 Connection ~ 5450 4575
 $Comp
-L RPi_Hat-rescue:GND-RESCUE-RPi_Hat #PWR037
+L GND #PWR037
 U 1 1 589B5898
 P 5450 4775
 F 0 "#PWR037" H 5500 4825 50  0001 C CNN
@@ -259,7 +290,7 @@ Wire Wire Line
 Wire Wire Line
 	2950 3375 2950 3425
 $Comp
-L RPi_Hat-rescue:GND-RESCUE-RPi_Hat #PWR038
+L GND #PWR038
 U 1 1 5935FEFC
 P 2950 3425
 F 0 "#PWR038" H -1975 900 50  0001 C CNN
@@ -274,7 +305,7 @@ Wire Wire Line
 Wire Wire Line
 	2625 4475 2625 4300
 $Comp
-L RPi_Hat-rescue:R-RESCUE-RPi_Hat R6
+L R R6
 U 1 1 5935FFC7
 P 2625 4150
 F 0 "R6" H 2695 4196 50  0000 L CNN
@@ -285,7 +316,7 @@ F 3 "" H 2625 4150 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L RPi_Hat-rescue:+3.3V-RESCUE-RPi_Hat #PWR039
+L +3.3V #PWR039
 U 1 1 59360100
 P 2625 3925
 F 0 "#PWR039" H -2975 2025 50  0001 C CNN
