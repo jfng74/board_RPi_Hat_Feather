@@ -6,6 +6,7 @@
 #include <FanCompostMsg.h>
 //#include <Adafruit_FeatherOLED.h>
 
+// Ajout de commentaires 
 
 // m0 & 32u4 feathers
 #define VBATPIN A7
